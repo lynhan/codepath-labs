@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="iTb-jh-e4C">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -18,8 +18,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="181" id="aXR-3D-PHb" customClass="PostCell" customModule="instagram" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="181"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="postCell" rowHeight="181" id="aXR-3D-PHb" customClass="PostCell" customModule="instagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="181"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aXR-3D-PHb" id="wQB-hj-9Ac">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
@@ -33,6 +33,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="postImageView" destination="rji-Sn-p74" id="Gdr-jd-tgz"/>
+                                            <segue destination="l8n-r4-LkG" kind="push" id="juo-2Y-Tic"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -40,11 +41,54 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="w4c-3N-9cX"/>
                     <connections>
                         <outlet property="tableView" destination="xZO-aQ-1B8" id="GJn-qo-0CB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="685" y="301"/>
+        </scene>
+        <!--Photo Details View Controller-->
+        <scene sceneID="qrK-wf-5Mc">
+            <objects>
+                <viewController id="l8n-r4-LkG" customClass="PhotoDetailsViewController" customModule="instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xLg-mF-79S" customClass="Photo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="khy-Zw-deK">
+                                <rect key="frame" x="20" y="83" width="280" height="283"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="s22-sS-VX9"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="khy-Zw-deK" id="QMl-WE-ehd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tVI-Y3-SQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1135" y="301"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="MwE-ug-Bjp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iTb-jh-e4C" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QLX-vg-8RS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7q3-MH-eDc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WLY-pQ-SM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="221" y="301"/>
         </scene>
